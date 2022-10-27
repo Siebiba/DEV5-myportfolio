@@ -21,14 +21,22 @@ export default class Card {
     console.log("Rendering card...");
 
     // 🔥🔥🔥 TODO3: build the HTML element and append it to the DOM
-    // let card = document.createElement("div");
-    // card.dataset.number = counter + 1;
+    let card = document.createElement("div");
+    
+    card.dataset.number = counter + 1;
+
     // don't forget to append the child to to DOM
+    document.querySelector(".bingo__cards").appendChild(card);
+
 
     // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
     card.addEventListener("click", (e) => {
-      // this.markDone(e.target);
+    this.markDone(e.target);
+    console.log("click");
       // call checkWinner() on the Bingo class
+      Bingo.checkWinner();
+      // call save() on the Bingo class
+      Bingo.save();
       // try to call the save() method on the Bingo class
     });
   }

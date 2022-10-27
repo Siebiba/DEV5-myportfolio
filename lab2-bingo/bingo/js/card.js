@@ -28,8 +28,6 @@ export default class Card {
     console.log(card)
     //build html element
     //append it to the DOM
-
-
     // don't forget to append the child to to DOM
     document.querySelector(".bingo__board").appendChild(card);
 

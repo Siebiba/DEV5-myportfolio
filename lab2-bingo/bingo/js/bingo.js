@@ -86,12 +86,20 @@ for (let i = 0; i < this.cards.length; i++) {
     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
     let cardsWon = [];
     console.log("Saving bingo to localstorage");
-    // let cards = document.querySelectorAll(".bingo__card--done");
+    let cards = document.querySelectorAll(".bingo__card--done");
+    for (let i = 0; i < cards.length; i++) {
+      cardsWon.push(cards[i].dataset.number);
+    }
+
+    localStorage.setItem("bingo", JSON.stringify(cardsWon));
+    
 
     // if there are not done cards, remove localstorage
-    // if (cards.length === 0) {
+    if (cards.length === 0) {
+      localStorage.removeItem("bingo");
+
     // remove localstorage
-    // }
+    }
 
     // save a selection like [1, 7, 8] to localstorage item "bingo"
     // you might want to check out how JSON.stringify() works

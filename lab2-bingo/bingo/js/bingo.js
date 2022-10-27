@@ -5,7 +5,6 @@ import Card from "./card.js";
 
 // 🔥🔥🔥 TODO 1 - make sure to export the class, if you want to be able to import the class elsewhere
 export default class Bingo {
-  
   constructor() {
     // the constructor is called when you create a new instance of the class
     console.log("Welcome to Bingo! 🎉");
@@ -52,6 +51,11 @@ export default class Bingo {
 
     // 🔥🔥🔥 TODO 2
     // loop through all the cards in the array and create a new instance of a Card()
+for (let i = 0; i < this.cards.length; i++) {
+  let card = new Card(this.cards[i]);
+  console.log(i);
+  card.render(i);
+}
     // for()
     // create a new card object
     // let card = new Card(this.cards[i]);

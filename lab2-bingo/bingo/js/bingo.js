@@ -92,7 +92,7 @@ for (let i = 0; i < this.cards.length; i++) {
     }
 
     localStorage.setItem("bingo", JSON.stringify(cardsWon));
-    
+
 
     // if there are not done cards, remove localstorage
     if (cards.length === 0) {
@@ -114,7 +114,13 @@ for (let i = 0; i < this.cards.length; i++) {
 
     // check if localstorage item exists
     if (localStorage.getItem("bingo")) {
-      // let cardsWon = JSON.parse();
+    let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+    console.log(cardsWon);
+    for (let i = 0; i < cardsWon.length; i++) {
+      let card = document.querySelector(`[data-number="${cardsWon[i]}"]`);
+      card.classList.add("bingo__card--done");
+    }
+
       // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
       // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
       // .bingo__card--done

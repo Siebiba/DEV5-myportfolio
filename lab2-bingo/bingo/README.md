@@ -3,3 +3,9 @@
 
 
 # JavaScript Object.values()
+
+## Description
+Object.values() returns an array whose elements are the enumerable property values found on the object. The ordering of the properties is the same as that given by looping over the property values of the object manually.
+
+**Description
+Object.values() returns an array whose elements are the enumerable property values found on the object. The ordering of the properties is the same as that given by looping over the property values of the object manually.**

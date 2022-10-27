@@ -73,7 +73,7 @@ for (let i = 0; i < this.cards.length; i++) {
     
     console.log(cardsDone);
 
-    if (cardsDone.length === 5) {
+    if (cardsDone === 5) {
     // show the animated gif to the winner
     document.querySelector(".bingo__overlay").style.display = "block";
      }

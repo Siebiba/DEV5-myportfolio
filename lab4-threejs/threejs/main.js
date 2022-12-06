@@ -32,11 +32,24 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 })
 
-// Create Box
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshPhongMaterial( { color: 0xFFFFFF } );
+// Create Box with position
+const geometry = new THREE.BoxGeometry( 2, 2, 2 );
+const material = new THREE.MeshPhongMaterial( { color: 0x00FF00 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
+cube.position.x = 0;
+cube.position.y = 1;
+cube.position.z = 0;
+
+
+// Create Floorbox
+const floorGeometry = new THREE.BoxGeometry( 10, 0.1, 10 );
+const floorMaterial = new THREE.MeshPhongMaterial( { color: 0xFF0FFF } );
+const floor = new THREE.Mesh( floorGeometry, floorMaterial );
+scene.add( floor );
+
+
+
 
 camera.position.z = 5;
 

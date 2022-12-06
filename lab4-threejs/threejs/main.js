@@ -62,7 +62,7 @@ roof.rotation.y = 0.8;
 
 
 //create door on cube
-const doorGeometry = new THREE.BoxGeometry( 0.5, 1, 0.2 );
+const doorGeometry = new THREE.BoxGeometry( 0.5, 1, 0.1 );
 const doorMaterial = new THREE.MeshPhongMaterial( { color: 0x000000 } );
 const door = new THREE.Mesh( doorGeometry, doorMaterial );
 scene.add( door );
@@ -70,7 +70,41 @@ door.position.x = 0.5;
 door.position.y = 0.5;
 door.position.z = 1;
 
-//create window on cube
+
+//create second door on cube
+const door2Geometry = new THREE.BoxGeometry( 0.5, 0.5, 0.1 );
+const door2Material = new THREE.MeshPhongMaterial( { color: 0xFFFFFFF } );
+const door2 = new THREE.Mesh( door2Geometry, door2Material );
+scene.add( door2 );
+door2.position.x = -0.5;
+door2.position.y = 1;
+door2.position.z = 1;
+
+//add texture from assets map to cube
+const texture = new THREE.TextureLoader().load('assets/Stone.jpeg');
+const textureMaterial = new THREE.MeshPhongMaterial({map: texture});
+cube.material = textureMaterial;
+
+//add wood texture from assets map to door
+const woodTexture = new THREE.TextureLoader().load('assets/Wood.jpeg');
+const woodTextureMaterial = new THREE.MeshPhongMaterial({map: woodTexture});
+door.material = woodTextureMaterial;
+
+//add Stone2 texture from assets map to roof
+const stone2Texture = new THREE.TextureLoader().load('assets/Stone2.jpeg');
+const stone2TextureMaterial = new THREE.MeshPhongMaterial({map: stone2Texture});
+roof.material = stone2TextureMaterial;
+
+//add name texture from assets map to door2
+const nameTexture = new THREE.TextureLoader().load('assets/Name.jpg');
+const nameTextureMaterial = new THREE.MeshPhongMaterial({map: nameTexture});
+door2.material = nameTextureMaterial;
+
+
+
+
+
+
 
 
 

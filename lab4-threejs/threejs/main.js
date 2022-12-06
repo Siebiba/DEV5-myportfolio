@@ -1,9 +1,6 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-//import floor from src
-import Floor from './src/floor.js';
-import House from './src/house.js';
 
 
 //Scene
@@ -22,11 +19,11 @@ const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.5);
 scene.add(ambientLight);
 
 
+
 //Lights
 const light = new THREE.PointLight(0xFFFFFF, 1, 100);
 light.position.set(5, 5, 5);
 scene.add(light);
-
 
 // Make Canvas Responsive
 window.addEventListener('resize', () => {
@@ -35,12 +32,13 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 })
 
-const floor = new Floor();
-scene.add(floor.group);
+// Create Box
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshPhongMaterial( { color: 0xFFFFFF } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
 
-const house = new House();
-scene.add(house.group);
-
+camera.position.z = 5;
 
 
 

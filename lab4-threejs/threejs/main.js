@@ -48,6 +48,36 @@ const floorMaterial = new THREE.MeshPhongMaterial( { color: 0xFF0FFF } );
 const floor = new THREE.Mesh( floorGeometry, floorMaterial );
 scene.add( floor );
 
+//create roof cone on cube
+const roofGeometry = new THREE.ConeGeometry( 2, 2, 4 );
+const roofMaterial = new THREE.MeshPhongMaterial( { color: 0xFF0FFF } );
+const roof = new THREE.Mesh( roofGeometry, roofMaterial );
+scene.add( roof );
+roof.position.x = 0;
+roof.position.y = 3;
+roof.position.z = 0;
+
+//roof rotation on y axis with radials
+roof.rotation.y = 0.8;
+
+
+//create door on cube
+const doorGeometry = new THREE.BoxGeometry( 0.5, 1, 0.2 );
+const doorMaterial = new THREE.MeshPhongMaterial( { color: 0x000000 } );
+const door = new THREE.Mesh( doorGeometry, doorMaterial );
+scene.add( door );
+door.position.x = 0.5;
+door.position.y = 0.5;
+door.position.z = 1;
+
+//create window on cube
+
+
+
+
+
+
+
 
 
 

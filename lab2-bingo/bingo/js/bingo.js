@@ -69,11 +69,11 @@ for (let i = 0; i < this.cards.length; i++) {
 
     // 🔥🔥🔥 TODO 6
     // count all cards that are marked as done (select done items and count them with .length)
-    let cardsDone = document.querySelectorAll(".bingo__card--done").length; ;
+    let cardsDone = document.querySelectorAll(".bingo__card--done") ;
     
     console.log(cardsDone);
 
-    if (cardsDone === 5) {
+    if (cardsDone.length === 5) {
     // show the animated gif to the winner
     document.querySelector(".bingo__overlay").style.display = "block";
      }

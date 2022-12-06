@@ -24,8 +24,8 @@ export default class Card {
     // 🔥🔥🔥 TODO3: build the HTML element and append it to the DOM
     let card = document.createElement("div");
     card.classList.add("bingo__card");
-    card.setAttribute("data-number", counter + 1);
-    card.innerHTML = `<h4 class="bingo__card-title">${this.title}</h4>`;
+    card.dataset.number = counter + 1;
+    card.innerHTML = this.title
     console.log(card)
     //build html element
     //append it to the DOM
@@ -42,6 +42,10 @@ export default class Card {
       // call save() on the Bingo class
       Bingo.save();
       // try to call the save() method on the Bingo class
+
+      if (document.querySelectorAll(".bingo__card--done").length > 5) {
+        e.target.classList.remove("bingo__card--done")
+      }
     });
   }
 }

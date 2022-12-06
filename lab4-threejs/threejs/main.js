@@ -191,6 +191,9 @@ const rendering = function () {
 
 
 
+//rotation animation of roof
+  roof.rotation.y += 0.01;
+
   
 
 

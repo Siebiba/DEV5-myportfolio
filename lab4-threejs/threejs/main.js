@@ -40,6 +40,7 @@ const geometry = new THREE.BoxGeometry(2, 2, 2);
 const material = new THREE.MeshPhongMaterial({
     color: 0x00FF00
 });
+
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 cube.position.x = 0;
@@ -101,7 +102,7 @@ const textureMaterial = new THREE.MeshPhongMaterial({
 cube.material = textureMaterial;
 
 //add wood texture from assets map to door
-const woodTexture = new THREE.TextureLoader().load('assets/Wood.jpeg');
+const woodTexture = new THREE.TextureLoader().load('Wood.jpeg');
 const woodTextureMaterial = new THREE.MeshPhongMaterial({
     map: woodTexture
 });
@@ -159,16 +160,13 @@ for (let i = 0; i < 10; i++) {
 const loader2 = new OBJLoader();
 
 loader2.load('models/Animal.obj', function (object) {
-    
-       //object position on floor
+
+    //object position on floor
     object.position.set(2, 0.5, 0);
     object.scale.set(2, 2, 2);
     scene.add(object);
 
-
-
 });
-
 
 //add controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -181,7 +179,6 @@ controls.maxDistance = 10;
 camera.position.set(0, 20, 100);
 controls.update();
 
-
 // Rendering Function
 const rendering = function () {
     requestAnimationFrame(rendering);
@@ -189,13 +186,8 @@ const rendering = function () {
     // Update controls
     controls.update();
 
-
-
-//rotation animation of roof
-  roof.rotation.y += 0.01;
-
-  
-
+    //rotation animation of roof
+    roof.rotation.y += 0.01;
 
     renderer.render(scene, camera);
 }

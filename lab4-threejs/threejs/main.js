@@ -95,35 +95,35 @@ door2.position.y = 1;
 door2.position.z = 1;
 
 //add texture from assets map to cube
-const texture = new THREE.TextureLoader().load('public/assets/Stone.jpeg');
+const texture = new THREE.TextureLoader().load('/textures/Stone.jpeg');
 const textureMaterial = new THREE.MeshPhongMaterial({
     map: texture
 });
 cube.material = textureMaterial;
 
 //add wood texture from assets map to door
-const woodTexture = new THREE.TextureLoader().load('/static/Wood.jpeg');
+const woodTexture = new THREE.TextureLoader().load('/textures/Wood.jpeg');
 const woodTextureMaterial = new THREE.MeshPhongMaterial({
     map: woodTexture
 });
 door.material = woodTextureMaterial;
 
 //add Stone2 texture from assets map to roof
-const stone2Texture = new THREE.TextureLoader().load('/static/Stone2.jpeg');
+const stone2Texture = new THREE.TextureLoader().load('/textures/Stone2.jpeg');
 const stone2TextureMaterial = new THREE.MeshPhongMaterial({
     map: stone2Texture
 });
 roof.material = stone2TextureMaterial;
 
 //add name texture from assets map to door2
-const nameTexture = new THREE.TextureLoader().load('/static/Name.jpg');
+const nameTexture = new THREE.TextureLoader().load('/textures/Name.jpg');
 const nameTextureMaterial = new THREE.MeshPhongMaterial({
     map: nameTexture
 });
 door2.material = nameTextureMaterial;
 
 //add ground texture from assets map to floor
-const groundTexture = new THREE.TextureLoader().load('/assets/Ground.jpeg');
+const groundTexture = new THREE.TextureLoader().load('/textures/Ground.jpeg');
 const groundTextureMaterial = new THREE.MeshPhongMaterial({
     map: groundTexture
 });
@@ -135,7 +135,7 @@ const loader = new OBJLoader();
 
 for (let i = 0; i < 10; i++) {
 
-    loader.load('public/models/cloudTwo.obj', function (object) {
+    loader.load('textures/models/cloudTwo.obj', function (object) {
 
         let sign = Math.random() < 0.5 ? -1 : 1;
         let x = Math.random() * 10 * sign;
@@ -159,7 +159,7 @@ for (let i = 0; i < 10; i++) {
 
 const loader2 = new OBJLoader();
 
-loader2.load('/models/Animal.obj', function (object) {
+loader2.load('/textures/models/Animal.obj', function (object) {
 
     //object position on floor
     object.position.set(2, 0.5, 0);

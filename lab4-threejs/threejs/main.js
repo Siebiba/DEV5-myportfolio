@@ -102,28 +102,28 @@ const textureMaterial = new THREE.MeshPhongMaterial({
 cube.material = textureMaterial;
 
 //add wood texture from assets map to door
-const woodTexture = new THREE.TextureLoader().load('public/assets/Wood.jpeg');
+const woodTexture = new THREE.TextureLoader().load('/static/Wood.jpeg');
 const woodTextureMaterial = new THREE.MeshPhongMaterial({
     map: woodTexture
 });
 door.material = woodTextureMaterial;
 
 //add Stone2 texture from assets map to roof
-const stone2Texture = new THREE.TextureLoader().load('public/assets/Stone2.jpeg');
+const stone2Texture = new THREE.TextureLoader().load('/static/Stone2.jpeg');
 const stone2TextureMaterial = new THREE.MeshPhongMaterial({
     map: stone2Texture
 });
 roof.material = stone2TextureMaterial;
 
 //add name texture from assets map to door2
-const nameTexture = new THREE.TextureLoader().load('public/assets/Name.jpg');
+const nameTexture = new THREE.TextureLoader().load('/static/Name.jpg');
 const nameTextureMaterial = new THREE.MeshPhongMaterial({
     map: nameTexture
 });
 door2.material = nameTextureMaterial;
 
 //add ground texture from assets map to floor
-const groundTexture = new THREE.TextureLoader().load('public/assets/Ground.jpeg');
+const groundTexture = new THREE.TextureLoader().load('/assets/Ground.jpeg');
 const groundTextureMaterial = new THREE.MeshPhongMaterial({
     map: groundTexture
 });
@@ -159,7 +159,7 @@ for (let i = 0; i < 10; i++) {
 
 const loader2 = new OBJLoader();
 
-loader2.load('public/models/Animal.obj', function (object) {
+loader2.load('/models/Animal.obj', function (object) {
 
     //object position on floor
     object.position.set(2, 0.5, 0);
